@@ -5,26 +5,31 @@ const content = {
   items: [
     {
       size: 'large',
-      image: '/static/delete/image1.jpg',
+      image: '/delete/image1.png',
+      alt: 'Lols'
+    },
+    {
+      size: 'small',
+      image: '/delete/image2.png',
+      alt: 'Lols'
+    },
+    {
+      size: 'medium',
+      image: '/delete/image3.png',
+      alt: 'Lols'
+    },
+    {
+      size: 'small',
+      image: '/delete/image4.png',
+      alt: 'Lols'
     },
     {
       size: 'large',
-      image: '/static/delete/image1.jpg',
-    },
-    {
-      size: 'large',
-      image: '/static/delete/image1.jpg',
-    },
-    {
-      size: 'large',
-      image: '/static/delete/image1.jpg',
-    },
-    {
-      size: 'large',
-      image: '/static/delete/image1.jpg',
+      image: '/delete/image5.png',
+      alt: 'Lols'
     }
   ],
-  dragText: 'drag to explore'
+  dragText: 'Drag to explore'
 }
 
 export default content;

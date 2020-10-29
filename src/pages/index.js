@@ -7,12 +7,14 @@ import {
 import {
   Banner,
   Intro,
-  Projects
+  Projects,
+  Liked
 } from '../components/organisms';
 
 import bannerContent from '../components/organisms/banner/content';
 import introContent from '../components/organisms/intro/content';
 import projectContent from '../components/organisms/projects/content';
+import likedContent from '../components/organisms/liked/content';
 
 export default function Index() {
   return (
@@ -20,6 +22,7 @@ export default function Index() {
       <Banner {...bannerContent} />
       <Intro {...introContent} />
       <Projects {...projectContent} />
+      <Liked {...likedContent} />
     </ParallaxProvider>
   )
 }

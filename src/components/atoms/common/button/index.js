@@ -26,10 +26,34 @@ export default function Button(props) {
     return null;
   }
 
+  function renderHref() {
+    const {
+      buttonTheme,
+      type,
+      text,
+      href
+    } = props;
+
+    if (type === "href") {
+      return (
+        <a href={href} target="_blank">
+          <Atom buttonTheme={buttonTheme}>
+            <Ink style={{ color: 'white' }} />
+            <Text>
+              {text}
+            </Text>
+          </Atom>
+        </a>
+      )
+    }
+    return null;
+  }
+
 
   return (
     <>
       {renderAnchor()}
+      {renderHref()}
     </>
   )
 }
