@@ -126,7 +126,6 @@ border-radius: .375rem;
 padding: .5rem .75rem;
 border-style: none;
 font-size: 1em; 
-border: 1px solid #ccc;
 box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 `;
@@ -138,6 +137,5 @@ const TextArea = styled.textarea`
   border-width: 1px;
   border-radius: 0.375rem;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
