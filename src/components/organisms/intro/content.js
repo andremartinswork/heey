@@ -6,7 +6,7 @@ const content = {
     buttonTheme: 'theme1',
     type: 'anchor',
     text: 'DISCOVER',
-    anchor: 'Projects'
+    anchor: 'Services'
   }
 }
 

@@ -1,6 +1,6 @@
 const content = {
   sectionName: 'Projects',
-  title: 'Our Projects',
+  title: 'Projects',
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum quis elit dignissim fermentum. Proin sollicitudin ultrices vehicula. Aenean cursus sit amet ipsum in malesuada. Sed ornare velit eu est feugiat, eu faucibus nisl sagittis.',
   items: [
     {

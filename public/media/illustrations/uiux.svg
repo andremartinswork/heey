@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="426px" height="305px" viewBox="0 0 426 305" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>undraw_right_places_h9n3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HomeV2" transform="translate(-1149.000000, -2679.000000)" fill-rule="nonzero">
+            <g id="undraw_right_places_h9n3" transform="translate(960.000000, 2632.000000)">
+                <g transform="translate(85.000000, 47.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="105" y="20" width="39" height="71"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="221" y="255" width="52" height="71"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="168" y="145" width="52" height="78"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="221" y="43" width="52" height="78"></rect>
+                    <path d="M336,326 L104,326 L104,20 L336,20 L336,326 Z M104.994096,325.006463 L335.005904,325.006463 L335.005904,20.9935371 L104.994096,20.9935371 L104.994096,325.006463 Z" id="Shape" fill="#000000"></path>
+                    <path d="M288,326 L154,326 L154,20 L288,20 L288,326 Z M154.993011,325.005011 L287.006989,325.005011 L287.006989,20.9949893 L154.993011,20.9949893 L154.993011,325.005011 Z" id="Shape" fill="#000000"></path>
+                    <path d="M336,223 L104,223 L104,120 L336,120 L336,223 Z M104.994096,222.004636 L335.005904,222.004636 L335.005904,120.995364 L104.994096,120.995364 L104.994096,222.004636 Z" id="Shape" fill="#000000"></path>
+                    <circle id="Oval" fill="#000000" cx="154" cy="121" r="15"></circle>
+                    <circle id="Oval" fill="#000000" cx="287" cy="22" r="15"></circle>
+                    <rect id="Rectangle" fill="#000000" x="220" y="21" width="1" height="305"></rect>
+                    <circle id="Oval" fill="#000000" cx="220" cy="223" r="45"></circle>
+                    <path d="M488,117.234057 L487.633951,116.310447 L401.312312,150.211701 L318.762877,56.1684515 L421.236949,15.9236153 L420.8709,15 L318.066194,55.3747478 L292.570885,26.3296038 L296.774389,24.6993708 C293.912098,24.3112941 290.250848,22.8524232 287.597405,21.417646 C288.669956,24.2291132 289.632655,28.0380112 289.636613,30.915236 L291.820414,26.9832827 L317.081414,55.7615238 L160.316428,117.328238 L160.188133,112.837159 C158.858966,115.391692 156.248694,118.335767 154,120.342528 C157.018968,120.281562 160.944081,120.658945 163.66594,121.622526 L160.681988,118.251828 L317.778092,56.5551977 L400.327527,150.598482 L227.079873,218.638382 L226.951578,214.147625 C225.622377,216.702164 223.012109,219.646233 220.76344,221.652995 C223.782383,221.592029 227.707491,221.969411 230.429385,222.932993 L227.445552,219.562419 L401.02433,151.392275 L476.169204,237 L476.919794,236.34644 L402.00909,151.005528 L488,117.234057 Z" id="Path" fill="#FFFFFF"></path>
+                    <rect id="Rectangle" fill="#FFFFFF" x="445" y="102" width="85" height="32"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="460" y="110" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="460" y="116" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="460" y="122" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="378" y="0" width="85" height="32"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="393" y="9" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="393" y="15" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="393" y="21" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="434" y="222" width="85" height="32"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="449" y="230" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="449" y="237" width="55" height="3"></rect>
+                    <rect id="Rectangle" fill="#1500FF" x="449" y="242" width="55" height="3"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
