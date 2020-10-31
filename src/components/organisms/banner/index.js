@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  Section, Text, Wrapper
+  Section, Text, Wrapper, Container
 } from '../../atoms'
 
 import theme from '../../../styles/theme';
@@ -19,24 +19,25 @@ export default function Banner(props) {
   return (
     <Section classes={sectionName}>
       <Content>
-        <Top>
-          <Text
-            classes="h1"
-            tag="h1"
-            text={title}
-            colors={theme.colors.black}
-          />
-        </Top>
-        <Bottom>
-          <Text
-            classes="body1"
-            tag="p"
-            text={text1}
-            color={theme.colors.white}
-            align="center"
-          />
-        </Bottom>
-        <PositionScroll>
+        <Container lg>
+          <Top>
+            <Text
+              classes="h1"
+              tag="h1"
+              text={title}
+              color={theme.colors.white}
+            />
+          </Top>
+          {/* <Bottom>
+            <Text
+              classes="body1"
+              tag="p"
+              text={text1}
+              color={theme.colors.white}
+            />
+          </Bottom> */}
+        </Container>
+        {/* <PositionScroll>
           <Relative>
             <Rotation>
               <Text
@@ -49,9 +50,9 @@ export default function Banner(props) {
             </Rotation>
             <Bar />
           </Relative>
-        </PositionScroll>
+        </PositionScroll> */}
       </Content>
-      <Triangle />
+      {/* <Triangle /> */}
     </Section>
   )
 }
@@ -61,17 +62,16 @@ const Content = styled.div`
   z-index: 100;
   width: 100%;
   height: 100vh;
+  background: ${({ theme }) => theme.colors.primary};
 `;
 const Top = styled.div`
   height: calc(60vh - 50px);
   display: flex;
-  justify-content: center;
   align-items: flex-end;
 `;
 const Bottom = styled.div`
   height: calc(40vh - 50px);
   display: flex;
-  justify-content: center;
   align-items: center;
 `;
 const PositionScroll = styled.div`
@@ -127,12 +127,12 @@ const Bar = styled.div`
   }
 
 `;
-const Triangle = styled.div`
-  position: absolute;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-top: 100vh solid transparent;
-  border-bottom: 0px solid transparent;
-  border-left: 100vw solid ${({ theme }) => theme.colors.primary};
-`;
+// const Triangle = styled.div`
+//   position: absolute;
+//   top: 0;
+//   width: 0;
+//   height: 0;
+//   border-top: 100vh solid transparent;
+//   border-bottom: 0px solid transparent;
+//   border-left: 100vw solid ${({ theme }) => theme.colors.primary};
+// `;

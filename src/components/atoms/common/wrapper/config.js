@@ -4,14 +4,14 @@ const wrapper = {
       xs: 40,
       sm: 64,
       md: 80,
-      lg: 160,
+      lg: 140,
       xl: 200,
     },
     min: {
       xs: 24,
       sm: 40,
       md: 64,
-      lg: 104,
+      lg: 100,
       xl: 128,
     }
   },
@@ -20,14 +20,14 @@ const wrapper = {
       xs: 40,
       sm: 64,
       md: 80,
-      lg: 160,
+      lg: 140,
       xl: 200,
     },
     min: {
       xs: 24,
       sm: 40,
       md: 64,
-      lg: 104,
+      lg: 100,
       xl: 128,
     }
   }
