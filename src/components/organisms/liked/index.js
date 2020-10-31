@@ -1,24 +1,13 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import {
-  Section,
-  Wrapper,
-  Container,
-  Text,
-  Align,
-  Button
-} from '../../atoms';
+import { Section, Wrapper, Container, Text, Align, Button } from "../../atoms";
 
-import theme from '../../../styles/theme';
+import theme from "../../../styles/theme";
+import ContactForm from "../../molecules/form";
 
 export default function Liked(props) {
-  const {
-    sectionName,
-    title,
-    text,
-    button,
-  } = props;
+  const { sectionName, title, text, button } = props;
 
   return (
     <Section classes={sectionName}>
@@ -43,14 +32,14 @@ export default function Liked(props) {
                 />
               </Wrapper>
               <Wrapper top lg>
-                FORM
+                <ContactForm />
               </Wrapper>
             </Right>
           </Block>
         </Container>
       </Wrapper>
     </Section>
-  )
+  );
 }
 
 const Block = styled.div`
