@@ -1,9 +1,10 @@
 const content = {
-  sectionName: 'Banner',
-  title: 'HEY!',
-  text1: 'You want to know what we can do for you?',
-  text2: 'I see you are interested in our work :)',
-  scrollText: 'scroll',
-}
+  sectionName: "Banner",
+  title: "HEEY!",
+  text1: "We are pretty sure we can help you. Excited to know how?",
+  text2:
+    "We knew you would come back. Interested in our work? Get in touch! 😊",
+  scrollText: "scroll",
+};
 
 export default content;

@@ -1,13 +1,14 @@
 const content = {
-  sectionName: 'Intro',
-  title: 'ABOUT',
-  text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum quis elit dignissim fermentum. Proin sollicitudin ultrices vehicula. Aenean cursus sit amet ipsum in malesuada.</p><p>Sed ornare velit eu est feugiat, eu faucibus nisl sagittis. Phasellus non ligula nec est posuere consequat. Aenean eu libero mi. Donec varius posuere felis. Duis non nulla ut turpis pharetra facilisis.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum quis elit dignissim fermentum. Proin sollicitudin ultrices vehicula. Aenean cursus sit amet ipsum in malesuada. Sed ornare velit eu est feugiat, eu faucibus nisl sagittis. Phasellus non ligula nec est posuere consequat. Aenean eu libero mi. Donec varius posuere felis. Duis non nulla ut turpis pharetra facilisis.</p>',
+  sectionName: "Intro",
+  title: "ABOUT",
+  text:
+    "<p>We are a digital agency that aims to provide modern and esthetic solutions. We give you the opportunity to structure, analyze and adapt your own digital strategy, using not only but the fastest and most reliable web/mobile technologies.</p><p>Whether you want to sell your product, represent your own brand in a creative and modern way or just optimize your current website, we have the necessary tools to help you.</p> <p>We focus on ideas, creativity and business inteligence targetting each individual type of custommers. Every design must be attractive, elegant and nice to use - And it should manifest, in every detail of your website, the idea and values that you want to pass to your custommer.</p>",
   button: {
-    buttonTheme: 'theme1',
-    type: 'anchor',
-    text: 'DISCOVER',
-    anchor: 'Projects'
-  }
-}
+    buttonTheme: "theme1",
+    type: "anchor",
+    text: "DISCOVER",
+    anchor: "Projects",
+  },
+};
 
 export default content;
