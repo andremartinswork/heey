@@ -135,6 +135,7 @@ const TextArea = styled.textarea`
   background-color: #fff;
   border-color: #d2d6dc;
   border-width: 1px;
+  border-style: none;
   border-radius: 0.375rem;
   padding: 0.5rem 0.75rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
