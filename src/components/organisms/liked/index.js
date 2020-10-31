@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 
 import {
   Section,
@@ -23,32 +24,41 @@ export default function Liked(props) {
     <Section classes={sectionName}>
       <Wrapper both xl>
         <Container lg>
-          <Text
-            classes="h3"
-            tag="h3"
-            text={title}
-            color={theme.colors.black}
-            align="center"
-          />
-          <Wrapper top xs>
-            <Align>
+          <Block>
+            <Left />
+            <Right>
               <Text
-                classes="body2"
-                tag="p"
-                text={text}
+                classes="h3"
+                tag="h3"
+                text={title}
                 color={theme.colors.black}
-                maxWidth="350px"
-                align="center"
               />
-            </Align>
-          </Wrapper>
-          <Wrapper top sm>
-            <Align>
-              <Button {...button} />
-            </Align>
-          </Wrapper>
+              <Wrapper top sm>
+                <Text
+                  classes="body2"
+                  tag="p"
+                  text={text}
+                  color={theme.colors.darkGrey}
+                  maxWidth="470px"
+                />
+              </Wrapper>
+              <Wrapper top lg>
+                FORM
+              </Wrapper>
+            </Right>
+          </Block>
         </Container>
       </Wrapper>
     </Section>
   )
 }
+
+const Block = styled.div`
+  display: flex;
+`;
+const Left = styled.div`
+  width: 268px;
+`;
+const Right = styled.div`
+  flex: 2;
+`;

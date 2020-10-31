@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Ink from 'react-ink';
+import { Link } from 'react-scroll';
 
 export default function Button(props) {
   function renderAnchor() {
@@ -13,14 +14,14 @@ export default function Button(props) {
 
     if (type === "anchor") {
       return (
-        <a to={anchor}>
+        <Link to={anchor}>
           <Atom buttonTheme={buttonTheme}>
             <Ink style={{ color: 'white' }} />
             <Text>
               {text}
             </Text>
           </Atom>
-        </a>
+        </Link>
       )
     }
     return null;

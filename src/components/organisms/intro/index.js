@@ -46,6 +46,29 @@ export default function Intro(props) {
               </Right>
             </Block>
           </Container>
+          <Container lg>
+            <Block>
+              <Left>
+                <Text
+                  classes="h4"
+                  tag="h4"
+                  text="SERVICES"
+                  color={theme.colors.black}
+                />
+              </Left>
+              <Right>
+                <Text
+                  classes="body2"
+                  tag="div"
+                  text={text}
+                  color={theme.colors.black}
+                />
+                <Wrapper top md>
+                  <Button {...button} />
+                </Wrapper>
+              </Right>
+            </Block>
+          </Container>
         </Wrapper>
       </Wrapper>
     </Section>
