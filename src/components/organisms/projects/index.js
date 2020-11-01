@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import Swiper from 'react-id-swiper';
 
 import {
@@ -12,6 +11,7 @@ import {
   Wrapper,
   Container,
   Text,
+  PushContent
 } from '../../atoms';
 
 import SwiperStyles from './swiperStyles';
@@ -36,32 +36,37 @@ export default function Projects(props) {
   }
 
   return (
-    <Section classes={sectionName}>
+    <Section classes={sectionName} backgroundColor={theme.colors.white}>>
       <SwiperStyles />
-      <Index>
-      <Parallax className="custom-class" x={[20, -20]} tagOuter="div">
-        <Text
-          classes="h2"
-          tag="h2"
-          text={title}
-          color={theme.colors.black}
-          uppercase
-        />
-      </Parallax>
-      <Wrapper bottom lg>
-        <Wrapper top md>
-          <Container lg>
+
+      <Wrapper top lg>
+        <Parallax className="custom-class" x={[50, 0]} tagOuter="div">
+          <Text
+            classes="h2"
+            tag="h2"
+            text={title}
+            color={theme.colors.black}
+            uppercase
+            align="center"
+          />
+        </Parallax>
+      </Wrapper>
+      <Wrapper both lg>
+        <Container lg>
+          <PushContent>
             <Text
               classes="body2"
               tag="div"
               text={text}
-              color={theme.colors.black}
+              color={theme.colors.darkGrey}
               maxWidth="500px"
             />
-          </Container>
-        </Wrapper>
+          </PushContent>
+        </Container>
       </Wrapper>
+
       <WrapperSwiper>
+        <Spacer />
         <Swiper {...params}>
           {
             items.map((item, index) => (
@@ -71,63 +76,73 @@ export default function Projects(props) {
             ))
           }
         </Swiper>
-      </WrapperSwiper>
-      <Wrapper both sm>
-        <Container lg>
-          <Flex>
-            <Text
-              classes="body3"
-              tag="span"
-              text={dragText}
-              color={theme.colors.black}
-            />
-            <Bar />
-          </Flex>
+        <Container lg zIndex={2}>
+          <PushContent>
+            <Spacer>
+              <Flex>
+                <Text
+                  classes="body3"
+                  tag="span"
+                  text={dragText}
+                  color={theme.colors.black}
+                  uppercase
+                  bold
+                />
+                <Bar />
+              </Flex>
+            </Spacer>
+          </PushContent>
         </Container>
-      </Wrapper>
-      </Index>
-      <Triangle />
+        <Background />
+      </WrapperSwiper>
     </Section>
   )
 }
 
-const Index = styled.div`
-  position: relative;
-  z-index: 2;
-`;
 const WrapperSwiper = styled.div`
+  position: relative;
+    
   .large {
     width: 800px!important;
     height: 640px;
   }
-
+  
   .medium {
     width: 640px!important;
     height: 640px;
   }
-
+  
   .small {
     width: 430px!important;
     height: 640px;
   }
-
+  
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 `;
+/** TO DO*/
+const Spacer = styled.div`
+  width: 100%;
+  height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320)));
+  display: flex;
+ 
+  align-items: center;
+`;
 const Flex = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const Bar = styled.div`
-  margin-left: 24px;
+  margin-left: 16px;
   position: relative;
   width: 60px;
   height: 1px;
   overflow: hidden;
-
+  
   :after {
     content: '';
     position: absolute;
@@ -138,11 +153,11 @@ const Bar = styled.div`
     background-color:${({ theme }) => theme.colors.primary};
     animation: loop 2.5s infinite both;
   }
-
+  
   @keyframes loop {
     0% {
       transform: translateX(-120px);
-      animation-timing-function: ease-out;
+      animation-timing-function: ease- out;
     }
     100% {
       transform: translateX(60px);
@@ -150,12 +165,12 @@ const Bar = styled.div`
     }
   }
 `;
-const Triangle = styled.div`
+
+const Background = styled.div`
   position: absolute;
   top: 0;
-  width: 0;
-  height: 0;
-  border-top: 100vh solid transparent;
-  border-bottom: 0px solid transparent;
-  border-right: 100vw solid ${({ theme }) => theme.colors.grey};
+  bottom: 0;
+  right: 0;
+  width: calc(1140px + ((100vw - 1140px) / 2));
+  background: #F5F4FB;
 `;

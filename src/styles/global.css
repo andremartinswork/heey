@@ -35,7 +35,14 @@ html, body, #__next {
   letter-spacing: 4px;
 }
 .h5 {
-  font-size: 72px;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.07px;
+  text-align: center;
+  color: #000000;
   
 }
 .h6 {
@@ -68,8 +75,9 @@ html, body, #__next {
 
 .body3 {
   font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: 2px;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  line-height: normal;
 }
 
 .display1 {

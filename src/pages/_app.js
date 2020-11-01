@@ -1,6 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+
 import { ThemeProvider } from 'styled-components';
+
+import Layout from '../components/layout';
 
 // STYLES
 import '../styles/reset.css';
@@ -16,7 +19,9 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
         </Head>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </>
     </ThemeProvider>
   )
