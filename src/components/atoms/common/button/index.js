@@ -83,6 +83,19 @@ const Atom = styled.button`
       cursor: pointer;
     }
   `}
+
+  ${({ theme, buttonTheme }) => buttonTheme === "theme2" && css`
+    background-color: ${theme.colors.black};
+
+    ${Text} {
+      color: ${theme.colors.white};
+    }
+
+    :hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  `}
 `;
 
 

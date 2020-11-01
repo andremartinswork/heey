@@ -9,7 +9,7 @@ import {
   Intro,
   Services,
   Projects,
-  Liked
+  Liked,
 } from '../components/organisms';
 
 import bannerContent from '../components/organisms/banner/content';

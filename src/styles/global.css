@@ -75,12 +75,9 @@ html, body, #__next {
 
 .body3 {
   font-size: 12px;
-  font-weight: bold;
-  font-stretch: normal;
   font-style: normal;
   letter-spacing: 0.5px;
   line-height: normal;
-  text-transform: uppercase;
 }
 
 .display1 {

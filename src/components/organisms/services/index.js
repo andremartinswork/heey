@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Section, Text, Wrapper } from '../../atoms';
 import { Parallax } from 'react-scroll-parallax';
+import theme from '../../../styles/theme';
 
 export default function Services(props) {
   const {
@@ -38,6 +39,7 @@ export default function Services(props) {
                         classes="body2"
                         tag="div"
                         text={item.description}
+                        color={theme.colors.darkGrey}
                         style={{ marginTop: '24px' }}
                         maxWidth="400px"
                       />
@@ -61,6 +63,7 @@ export default function Services(props) {
                       classes="body2"
                       tag="div"
                       text={item.description}
+                      color={theme.colors.darkGrey}
                       style={{ marginTop: '24px' }}
                       maxWidth="400px"
                     />
