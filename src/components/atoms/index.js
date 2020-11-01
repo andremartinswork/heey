@@ -9,6 +9,7 @@ import Text from './common/text';
 import Wrapper from './common/wrapper';
 
 // OTHERS
+import PushContent from './pushContent';
 
 export {
   // COMMON
@@ -19,5 +20,8 @@ export {
   Picture,
   Section,
   Text,
-  Wrapper
+  Wrapper,
+
+  // OTHERS
+  PushContent
 }

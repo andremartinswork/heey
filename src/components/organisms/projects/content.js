@@ -1,6 +1,6 @@
 const content = {
   sectionName: "Projects",
-  title: "Our Projects",
+  title: "Projects",
   text:
     "<p>Here is a brief selection of our latest projects. Unfortunally, because of client's rights and privacy terms, we can't show you everything. But let us know if you want to know more about our work.</p> <p>Enjoy!</p>",
   items: [

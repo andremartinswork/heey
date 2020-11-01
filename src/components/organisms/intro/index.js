@@ -6,7 +6,8 @@ import {
   Wrapper,
   Container,
   Text,
-  Button
+  Button,
+  PushContent
 } from '../../atoms';
 
 import theme from '../../../styles/theme';
@@ -16,71 +17,65 @@ export default function Intro(props) {
     sectionName,
     title,
     text,
+    text1Question,
+    text2Question,
     button,
   } = props;
 
   return (
-    <Section classes={sectionName}>
-      <Wrapper md both>
-        <Wrapper xl both>
+    <Margin>
+      <Section classes={sectionName} zIndex={100} backgroundColor={theme.colors.white}>
+        <Bar>
+          <Text
+            classes="body1"
+            tag="p"
+            text={text1Question}
+            color={theme.colors.black}
+            bold
+            uppercase
+          />
+        </Bar>
+        <Wrapper top md>
           <Container lg>
-            <Block>
-              <Left>
-                <Text
-                  classes="h4"
-                  tag="h4"
-                  text={title}
-                  color={theme.colors.black}
-                />
-              </Left>
-              <Right>
+            <PushContent>
+              <Text
+                classes="h3"
+                tag="h3"
+                text={title}
+                color={theme.colors.black}
+              />
+              <Wrapper top sm>
                 <Text
                   classes="body2"
                   tag="div"
                   text={text}
                   color={theme.colors.black}
                 />
-                <Wrapper top md>
-                  <Button {...button} />
-                </Wrapper>
-              </Right>
-            </Block>
-          </Container>
-          <Container lg>
-            <Block>
-              <Left>
-                <Text
-                  classes="h4"
-                  tag="h4"
-                  text="SERVICES"
-                  color={theme.colors.black}
-                />
-              </Left>
-              <Right>
-                <Text
-                  classes="body2"
-                  tag="div"
-                  text={text}
-                  color={theme.colors.black}
-                />
-                <Wrapper top md>
-                  <Button {...button} />
-                </Wrapper>
-              </Right>
-            </Block>
+              </Wrapper>
+              <Wrapper top md>
+                <Button {...button} />
+              </Wrapper>
+            </PushContent>
           </Container>
         </Wrapper>
-      </Wrapper>
-    </Section>
+        <Wrapper bottom xl />
+      </Section>
+    </Margin>
   )
 }
 
-const Block = styled.div`
+const Margin = styled.div`
+  margin-top: 100vh;
+`;
+const Bar = styled.div`
+  position: absolute;
+  right: 0;
+  top: -100px;
+  width: calc(1140px + ((100vw - 1140px) / 2));
+  height: 100px;
+  background-color: ${({ theme }) => theme.colors.white};
   display: flex;
-`;
-const Left = styled.div`
-  width: 280px;
-`;
-const Right = styled.div`
-  flex: 2;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 268px;
 `;
