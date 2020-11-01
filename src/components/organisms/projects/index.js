@@ -36,7 +36,7 @@ export default function Projects(props) {
   }
 
   return (
-    <Section classes={sectionName}>
+    <Section classes={sectionName} backgroundColor={theme.colors.white}>>
       <SwiperStyles />
 
       <Wrapper top lg>

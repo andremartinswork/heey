@@ -11,23 +11,45 @@ export default function Services(props) {
   } = props;
 
   return (
-    <Section classes={sectionName}>
+    <Section classes={sectionName} backgroundColor={theme.colors.white}>
       <Wrapper bottom lg>
-
-      
-      {
-        items.map((item, index) => {
-          if (index % 2 == 0) {
+        {
+          items.map((item, index) => {
+            if (index % 2 == 0) {
+              return (
+                <Item key={String(index)}>
+                  <Left blue>
+                    <Content>
+                      <Parallax y={[50, 0]}>
+                        <img src={item.illlustration} alt={item.title} />
+                      </Parallax>
+                    </Content>
+                  </Left>
+                  <Right>
+                    <Content>
+                      <div>
+                        <Text
+                          classes="h5"
+                          tag="h5"
+                          text={item.title}
+                        />
+                        <Text
+                          classes="body2"
+                          tag="div"
+                          text={item.description}
+                          color={theme.colors.darkGrey}
+                          style={{ marginTop: '24px' }}
+                          maxWidth="400px"
+                        />
+                      </div>
+                    </Content>
+                  </Right>
+                </Item>
+              )
+            }
             return (
               <Item key={String(index)}>
-                <Left blue>
-                  <Content>
-                  <Parallax y={[50, 0]}>
-                      <img src={item.illlustration} alt={item.title} />
-                    </Parallax>
-                  </Content>
-                </Left>
-                <Right>
+                <Left>
                   <Content>
                     <div>
                       <Text
@@ -45,43 +67,19 @@ export default function Services(props) {
                       />
                     </div>
                   </Content>
+                </Left>
+                <Right blue>
+                  <Content>
+                    <Parallax y={[0, 50]}>
+                      <img src={item.illlustration} alt={item.title} />
+                    </Parallax>
+
+                  </Content>
                 </Right>
               </Item>
             )
-          }
-          return (
-            <Item key={String(index)}>
-              <Left>
-                <Content>
-                  <div>
-                    <Text
-                      classes="h5"
-                      tag="h5"
-                      text={item.title}
-                    />
-                    <Text
-                      classes="body2"
-                      tag="div"
-                      text={item.description}
-                      color={theme.colors.darkGrey}
-                      style={{ marginTop: '24px' }}
-                      maxWidth="400px"
-                    />
-                  </div>
-                </Content>
-              </Left>
-              <Right blue>
-                <Content>
-                  <Parallax y={[0, 50]}>
-                    <img src={item.illlustration} alt={item.title} />
-                  </Parallax>
-
-                </Content>
-              </Right>
-            </Item>
-          )
-        })
-      }
+          })
+        }
       </Wrapper>
     </Section>
   )

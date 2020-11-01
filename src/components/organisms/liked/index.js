@@ -21,7 +21,7 @@ export default function Liked(props) {
   } = props;
 
   return (
-    <Section classes={sectionName}>
+    <Section classes={sectionName} backgroundColor={theme.colors.white}>
       <Wrapper both xl>
         <Container lg>
           <Block>

@@ -16,21 +16,30 @@ export default function Banner(props) {
   } = props;
 
   return (
-    <Section classes={sectionName} backgroundColor={theme.colors.primary}>
-      <Container lg>
-        <Content>
-          <Text
-            classes="h1"
-            tag="h1"
-            text={title}
-            color={theme.colors.white}
-          />
-        </Content>
-      </Container>
-    </Section >
+    <Fixed>
+      <Section classes={sectionName} backgroundColor={theme.colors.primary}>
+        <Container lg>
+          <Content>
+            <Text
+              classes="h1"
+              tag="h1"
+              text={title}
+              color={theme.colors.white}
+            />
+          </Content>
+        </Container>
+      </Section>
+    </Fixed>
   )
 }
 
+const Fixed = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+`;
 const Content = styled.div`
   position: relative;
   z-index: 100;
@@ -38,7 +47,7 @@ const Content = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  transform: translateX(-32px);
+  transform: translateX(-34px);
   box-sizing: border-box;
   padding-bottom: 50px;
 `;

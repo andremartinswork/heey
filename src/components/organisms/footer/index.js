@@ -20,7 +20,7 @@ export default function Footer(props) {
   return (
     <footer className={sectionName}>
       <Content>
-        <Container md>
+        <Container lg>
           <Block>
             <Left>
               <Text

@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import { 
-  useViewportScroll
-} from "framer-motion"
-
 import {
   Button
 } from '../../../atoms';
 
 let lastScrollY = 0;
-let ticking = false;
 
 export default function Navbar(props) {
   const {
@@ -32,32 +27,19 @@ export default function Navbar(props) {
 
     if (lastScrollY < 200 && !top) {
       setTop(true);
-      console.log('LELE')
     }
     
     if (lastScrollY >= 200 && top) {
       setTop(false)
-      console.log('LOOOL')
     }
-    console.log(lastScrollY)
-
-    // if (!ticking) {
-    //   window.requestAnimationFrame(() => {
-    //     this.nav.current.style.top = `${lastScrollY}px`;
-    //     ticking = false;
-    //   });
-   
-    //   ticking = true;
-    // }
   }
   
-
   return (
     <Header top={top}>
       <Content>
         <Left>
           <Logo>
-            HEEY.CREATVE
+            HEEY.CREATIVE
           </Logo>
         </Left>
         <Right>
@@ -78,9 +60,13 @@ const Header = styled.header`
   box-sizing: border-box;
   padding-left: calc((100vw - 1140px) / 2);
   padding-right: 48px;
+  border-bottom: 2px solid rgba(0,0,0,0);
+  transition: all 0.4s ease;
 
-  ${({ top }) => top && css`
-    background-color: red;
+  ${({ top, theme }) => !top && css`
+    background-color: ${theme.colors.primary};
+    height: 80px;
+    border-bottom: 2px solid rgba(0,0,0,1);
   `}
 `;
 
