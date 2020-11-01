@@ -65,12 +65,13 @@ const Text = styled.span`
   font-size: 16px;
   line-height: 1;
   letter-spacing: 1px;
+  transition: all 0.4s ease;
 `;
 
 const Atom = styled.button`
   position: relative;
   padding: 16px 48px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 
   ${({ theme, buttonTheme }) =>
     buttonTheme === "theme1" &&
@@ -96,9 +97,12 @@ const Atom = styled.button`
     }
 
     :hover {
-      opacity: 0.8;
+      ${Text} {
+        color: ${theme.colors.black};
+      }
+      background-color: ${theme.colors.white};
+      /* opacity: 0.8; */
       cursor: pointer;
     }
   `}
-
 `;

@@ -25,12 +25,12 @@ export default function Navbar(props) {
   function handleScroll() {
     lastScrollY = window.scrollY;
 
-    if (lastScrollY < 200 && !top) {
-      setTop(true);
+    if (lastScrollY < 200) {
+      !top && setTop(true);
     }
     
-    if (lastScrollY >= 200 && top) {
-      setTop(false)
+    if ((lastScrollY > 200) && top) {
+      top && setTop(false)
     }
   }
   
