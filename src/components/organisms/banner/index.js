@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Typist from 'react-typist';
 
 import {
   motion,
@@ -32,17 +31,13 @@ export default function Banner(props) {
         <Container lg>
           <Content>
             <motion.div style={{ y }}>
-             
               <Text
                 classes="h1"
                 tag="h1"
                 text={title}
                 color={theme.colors.white}
               />
-              
-             
             </motion.div>
-
           </Content>
         </Container>
       </Section>

@@ -18,9 +18,9 @@ export default function Navbar(props) {
 
   const { scrollYProgress } = useViewportScroll();
 
-  const background = useTransform(scrollYProgress, [0.1, 0.2], ['rgba(21,0,255,0)', 'rgba(21,0,255,1)']);
-  const height = useTransform(scrollYProgress, [0.1, 0.2], ['100px', '80px']);
-  const borderColor = useTransform(scrollYProgress, [0.1, 0.2], ['rgba(0,0,0,0)', 'rgba(0,0,0,1)']);
+  const background = useTransform(scrollYProgress, [0.1, 0.150], ['rgba(21,0,255,0)', 'rgba(21,0,255,1)']);
+  const height = useTransform(scrollYProgress, [0.1, 0.150], ['100px', '80px']);
+  const borderColor = useTransform(scrollYProgress, [0.1, 0.150], ['rgba(0,0,0,0)', 'rgba(0,0,0,1)']);
 
   return (
     <Header style={{ background, height, borderColor }}>
