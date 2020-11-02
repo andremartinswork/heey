@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 
 import {
   motion,
   useViewportScroll,
-  useSpring,
   useTransform
 } from "framer-motion";
 
@@ -12,44 +11,19 @@ import {
   Button
 } from '../../../atoms';
 
-let lastScrollY = 0;
-
 export default function Navbar(props) {
   const {
     button
   } = props;
 
   const { scrollYProgress } = useViewportScroll();
-  const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
 
-  useEffect(() => {
-    console.log('yRange', yRange)
-  }, [yRange])
+  const background = useTransform(scrollYProgress, [0.1, 0.2], ['rgba(21,0,255,0)', 'rgba(21,0,255,1)']);
+  const height = useTransform(scrollYProgress, [0.1, 0.2], ['100px', '80px']);
+  const borderColor = useTransform(scrollYProgress, [0.1, 0.2], ['rgba(0,0,0,0)', 'rgba(0,0,0,1)']);
 
-  // const [top, setTop] = useState(true);
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll, true);
-
-  //   () => {
-  //     window.removeEventListener('scroll', handleScroll, true);
-  //   }
-  // }, [])
-  
-  // function handleScroll() {
-  //   lastScrollY = window.scrollY;
-
-  //   if (lastScrollY < 200) {
-  //     !top && setTop(true);
-  //   }
-    
-  //   if ((lastScrollY > 200) && top) {
-  //     top && setTop(false)
-  //   }
-  // }
-  
   return (
-    <Header top={true}>
+    <Header style={{ background, height, borderColor }}>
       <Content>
         <Left>
           <Logo>
@@ -64,24 +38,18 @@ export default function Navbar(props) {
   )
 }
 
-const Header = styled.header`
+const Header = styled(motion.header)`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10001;
-  height: 100px;
   box-sizing: border-box;
   padding-left: calc((100vw - 1140px) / 2);
   padding-right: 48px;
   border-bottom: 2px solid rgba(0,0,0,0);
-  transition: all 0.4s ease;
-
-  ${({ top, theme }) => !top && css`
-    background-color: ${theme.colors.primary};
-    height: 80px;
-    border-bottom: 2px solid rgba(0,0,0,1);
-  `}
+  border-bottom-width: 2px;
+  border-style: solid;
 `;
 
 const Content = styled.div`
@@ -90,7 +58,7 @@ const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Left = styled.div``;
+const Left = styled(motion.div)``;
 const Right = styled.div``;
 const Logo = styled.div`
   font-family: Oxygen;

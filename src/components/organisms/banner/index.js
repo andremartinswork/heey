@@ -1,5 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Typist from 'react-typist';
+
+import {
+  motion,
+  useViewportScroll,
+  useTransform
+} from "framer-motion";
 
 import {
   Section,
@@ -15,17 +22,27 @@ export default function Banner(props) {
     title,
   } = props;
 
+  const { scrollYProgress } = useViewportScroll();
+
+  const y = useTransform(scrollYProgress, [0, 0.2], ['0', '5vh']);
+
   return (
     <Fixed>
       <Section classes={sectionName} backgroundColor={theme.colors.primary}>
         <Container lg>
           <Content>
-            <Text
-              classes="h1"
-              tag="h1"
-              text={title}
-              color={theme.colors.white}
-            />
+            <motion.div style={{ y }}>
+             
+              <Text
+                classes="h1"
+                tag="h1"
+                text={title}
+                color={theme.colors.white}
+              />
+              
+             
+            </motion.div>
+
           </Content>
         </Container>
       </Section>
