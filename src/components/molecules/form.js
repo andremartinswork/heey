@@ -49,45 +49,44 @@ function ContactForm() {
   return (
     <Form onSubmit={handleOnSubmit}>
       <InputWrapper>
-        <Label htmlFor="name">
-          <Text
-            classes="body2"
-            tag="p"
-            text="Name"
-            color={theme.colors.darkGrey}
-          />
-        </Label>
-        <TextField id="name" type="name" name="name" required />
+        <TextField
+          id="name"
+          type="name"
+          name="name"
+          required
+          placeholder="Name*"
+        />
       </InputWrapper>
-      <InputWrapper>
-        <Label htmlFor="email">
-          <Text
-            classes="body2"
-            tag="p"
-            text="Email"
-            color={theme.colors.darkGrey}
+      <Wrapper top sm>
+        <InputWrapper>
+          <TextField
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="Email*"
           />
-        </Label>
-        <TextField id="email" type="email" name="email" required />
-      </InputWrapper>
+        </InputWrapper>
+      </Wrapper>
 
-      <InputWrapper>
-        <Label htmlFor="message">
-          <Text
-            classes="body2"
-            tag="p"
-            text="Message"
-            color={theme.colors.darkGrey}
-          />
-        </Label>
-        <TextArea rows={5} id="message" name="message"></TextArea>
-      </InputWrapper>
-      <Wrapper md>
+      <Wrapper top sm>
+        <InputWrapper>
+          <TextArea
+            rows={5}
+            id="message"
+            name="message"
+            placeholder="Message*"
+          >
+          </TextArea>
+        </InputWrapper>
+      </Wrapper>
+
+      <Wrapper top md>
         <Button {...button} disabled={serverState.submitting} />
       </Wrapper>
 
       {serverState.status && (
-        <Wrapper top>
+        <Wrapper top top>
           <Text
             classes="body2"
             tag="p"
@@ -106,37 +105,64 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
-const Label = styled.label`
-  font-weight: bold !important;
-  margin-bottom: 0.5em;
-`;
-
 const InputWrapper = styled.div`
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 `;
 
-const TextField = styled.input`\
-width: 50%;
-background-color: #fff;
-border-color: #d2d6dc;
-border-width: 1px;
-border-radius: .375rem;
-padding: .5rem .75rem;
-border-style: none;
-font-size: 1em; 
-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+const TextField = styled.input`
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #000;
+  color: #000;
 
+  font-family: Oxygen;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+
+  ::placeholder {
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  :focus {
+    transition: all 0.4s ease;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 `;
 const TextArea = styled.textarea`
-  width: 50%;
-  font-size: 1em;
-  background-color: #fff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-style: none;
-  border-radius: 0.375rem;
-  padding: 0.5rem 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #000;
+  color: #000;
+  font-family: Oxygen;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+
+  ::placeholder {
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  :focus {
+    transition: all 0.4s ease;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 `;

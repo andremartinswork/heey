@@ -1,13 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Section, Wrapper, Container, Text, Align, Button } from "../../atoms";
+import { 
+  Section, 
+  Wrapper, 
+  Container, 
+  Text
+} from "../../atoms";
 
-import theme from "../../../styles/theme";
 import ContactForm from "../../molecules/form";
 
+import theme from "../../../styles/theme";
+
 export default function Liked(props) {
-  const { sectionName, title, text, button } = props;
+  const { 
+    sectionName,
+    title,
+    text
+  } = props;
 
   return (
     <Section classes={sectionName} backgroundColor={theme.colors.white}>
@@ -28,7 +38,7 @@ export default function Liked(props) {
                   tag="p"
                   text={text}
                   color={theme.colors.darkGrey}
-                  maxWidth="470px"
+                  maxWidth="600px"
                 />
               </Wrapper>
               <Wrapper top lg>

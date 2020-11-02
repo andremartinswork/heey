@@ -66,6 +66,7 @@ const Text = styled.span`
   line-height: 1;
   letter-spacing: 1px;
   transition: all 0.4s ease;
+  text-transform: uppercase;
 `;
 
 const Atom = styled.button`

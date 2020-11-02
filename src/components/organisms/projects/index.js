@@ -40,7 +40,7 @@ export default function Projects(props) {
       <SwiperStyles />
 
       <Wrapper top lg>
-        <Parallax className="custom-class" x={[50, 0]} tagOuter="div">
+        <Parallax className="custom-class" x={[20, 0]} tagOuter="div">
           <Text
             classes="h2"
             tag="h2"

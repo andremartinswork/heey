@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import {
+  motion,
+  useViewportScroll,
+  useSpring,
+  useTransform
+} from "framer-motion";
+
+import {
   Button
 } from '../../../atoms';
 
@@ -12,30 +19,37 @@ export default function Navbar(props) {
     button
   } = props;
 
-  const [top, setTop] = useState(true);
+  const { scrollYProgress } = useViewportScroll();
+  const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, true);
+    console.log('yRange', yRange)
+  }, [yRange])
 
-    () => {
-      window.removeEventListener('scroll', handleScroll, true);
-    }
-  }, [])
+  // const [top, setTop] = useState(true);
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll, true);
+
+  //   () => {
+  //     window.removeEventListener('scroll', handleScroll, true);
+  //   }
+  // }, [])
   
-  function handleScroll() {
-    lastScrollY = window.scrollY;
+  // function handleScroll() {
+  //   lastScrollY = window.scrollY;
 
-    if (lastScrollY < 200) {
-      !top && setTop(true);
-    }
+  //   if (lastScrollY < 200) {
+  //     !top && setTop(true);
+  //   }
     
-    if ((lastScrollY > 200) && top) {
-      top && setTop(false)
-    }
-  }
+  //   if ((lastScrollY > 200) && top) {
+  //     top && setTop(false)
+  //   }
+  // }
   
   return (
-    <Header top={top}>
+    <Header top={true}>
       <Content>
         <Left>
           <Logo>
