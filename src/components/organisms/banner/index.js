@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
 import {
   motion,
@@ -35,26 +36,28 @@ export default function Banner(props) {
           <Line />
           <Line />
           <Line />
-          <Line className="mobile"/>
-          <Line className="mobile"/>
-          <Line className="mobile"/>
+          <Line className="mobile" />
+          <Line className="mobile" />
+          <Line className="mobile" />
         </Lines>
         <Lines horizontal style={{ opacity }}>
-          <Line horizontal  />
-          <Line horizontal  />
-          <Line horizontal  />
-          <Line horizontal  />
-          <Line horizontal  />
+          <Line horizontal />
+          <Line horizontal />
+          <Line horizontal />
+          <Line horizontal />
+          <Line horizontal />
         </Lines>
         <Container lg>
           <Content>
             <motion.div style={{ y }}>
-              <Text
-                classes="h1"
-                tag="h1"
-                text={title}
-                color={theme.colors.white}
-              />
+              <Fade bottom distante="40px">
+                <Text
+                  classes="h1"
+                  tag="h1"
+                  text={title}
+                  color={theme.colors.white}
+                />
+              </Fade>
             </motion.div>
           </Content>
         </Container>

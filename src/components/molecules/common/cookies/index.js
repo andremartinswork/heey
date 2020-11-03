@@ -50,12 +50,12 @@ export default function Cookies(props) {
           bold
         />
         <Text
-          classes="body2"
+          classes="body3"
           tag="p"
           text={text}
           style={{ marginTop: '16px', marginBottom: '24px' }}
+          lineHeight={1.6}
         />
-
         <Button
           {...button}
           click={onClick}
@@ -77,7 +77,18 @@ const Modal = styled(motion.div)`
   opacity: 0;
   z-index: -1;
   transform: translateY(100%);
+
+  @media screen and (max-width: 578px) {
+    left: 20px;
+    right: 20px;
+    bottom: 80px;
+    width: auto;
+  }
 `;
 const Content = styled.div`
   padding: 32px 48px;
+
+  @media screen and (max-width: 578px) {
+    padding: 24px 32px;
+  }
 `;

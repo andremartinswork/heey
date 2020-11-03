@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
 import {
   motion,
@@ -26,15 +27,19 @@ export default function Navbar(props) {
     <Header style={{ background, height, borderColor }}>
       <Content>
         <Left>
-          <Logo>
-            HEEY.CREATIVE
-          </Logo>
-          <LogoSmall>
-            HEEY
-          </LogoSmall>
+          <Fade top>
+            <Logo>
+              HEEY.CREATIVE
+            </Logo>
+            <LogoSmall>
+              HEEY
+            </LogoSmall>
+          </Fade>
         </Left>
         <Right>
-          <Button {...button} />
+          <Fade top>
+            <Button {...button} />
+          </Fade>
         </Right>
       </Content>
     </Header>

@@ -40,7 +40,7 @@ export default function Liked(props) {
               <Fade>
                 <Text
                   classes="body2"
-                  tag="p"
+                  tag="div"
                   text={text}
                   color={theme.colors.darkGrey}
                   maxWidth="600px"

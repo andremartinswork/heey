@@ -1,6 +1,6 @@
 const content = {
   title: 'Cookies',
-  text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+  text: "Heey uses technical cookies, Google Analytics on your browser that helps us enhance your experience. These cookies allow our website to work and help us understand what information is most useful to visitors.",
   button: {
     buttonTheme: 'theme3',
     type: "button",

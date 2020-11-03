@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
@@ -18,6 +18,7 @@ import {
 } from '../../atoms';
 
 import theme from '../../../styles/theme';
+import { checkCookie, setCookie } from '../../../utils/cookies';
 
 export default function Intro(props) {
   const {
@@ -29,6 +30,17 @@ export default function Intro(props) {
     button,
   } = props;
 
+  const [visited, setVisited] = useState(false);
+
+  useEffect(() => {
+    if (!checkCookie('v')) {
+      setCookie('v', 'y', 366)
+    }
+    else {
+      setVisited(true);
+    }
+  }, [])
+
   const { scrollYProgress } = useViewportScroll();
 
   const y = useTransform(scrollYProgress, [0, 0.150], ['0', '100%']);
@@ -36,16 +48,18 @@ export default function Intro(props) {
   return (
     <Margin>
       <Section classes={sectionName} zIndex={100} backgroundColor={theme.colors.white}>
-        <Bar style={{ y }}>
-          <Text
-            classes="body1"
-            tag="p"
-            text={text1Question}
-            color={theme.colors.black}
-            bold
-            uppercase
-          />
-        </Bar>
+        <Fade right distance="100px">
+          <Bar style={{ y }}>
+            <Text
+              classes="body1"
+              tag="p"
+              text={visited ? text2Question : text1Question}
+              color={theme.colors.black}
+              bold
+              uppercase
+            />
+          </Bar>
+        </Fade>
         <Wrapper top xs />
         <Wrapper top xl>
           <Container lg>
