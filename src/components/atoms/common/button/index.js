@@ -9,7 +9,7 @@ export default function Button(props) {
 
     if (type === "anchor") {
       return (
-        <Link to={anchor}>
+        <Link to={anchor} smooth>
           <Atom buttonTheme={buttonTheme}>
             <Ink style={{ color: "white" }} />
             <Text>{text}</Text>
@@ -79,6 +79,7 @@ const Atom = styled.div`
   position: relative;
   padding: 16px 48px;
   transition: all 0.4s ease;
+  display: inline-block;
 
   ${({ theme, buttonTheme }) =>
     buttonTheme === "theme1" &&

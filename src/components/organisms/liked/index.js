@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from 'react-reveal/Fade';
 
 import {
   Section,
@@ -25,26 +26,32 @@ export default function Liked(props) {
       <Wrapper both xl>
         <Container lg>
           <PushContent>
-            <Text
-              classes="h3"
-              tag="h3"
-              text={title}
-              color={theme.colors.black}
-              bold
-              uppercase
-            />
-            <Wrapper top sm>
+            <Fade>
               <Text
-                classes="body2"
-                tag="p"
-                text={text}
-                color={theme.colors.darkGrey}
-                maxWidth="600px"
+                classes="h3"
+                tag="h3"
+                text={title}
+                color={theme.colors.black}
+                bold
+                uppercase
               />
+            </Fade>
+            <Wrapper top sm>
+              <Fade>
+                <Text
+                  classes="body2"
+                  tag="p"
+                  text={text}
+                  color={theme.colors.darkGrey}
+                  maxWidth="600px"
+                />
+              </Fade>
             </Wrapper>
+            <Fade>
             <Wrapper top lg>
               <ContactForm />
             </Wrapper>
+            </Fade>
           </PushContent>
         </Container>
       </Wrapper>
