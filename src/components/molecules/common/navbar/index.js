@@ -29,6 +29,9 @@ export default function Navbar(props) {
           <Logo>
             HEEY.CREATIVE
           </Logo>
+          <LogoSmall>
+            HEEY
+          </LogoSmall>
         </Left>
         <Right>
           <Button {...button} />
@@ -50,6 +53,14 @@ const Header = styled(motion.header)`
   border-bottom: 2px solid rgba(0,0,0,0);
   border-bottom-width: 2px;
   border-style: solid;
+
+  @media screen and (max-width: 1410px) {
+    padding-left: 200px;
+  }
+  @media screen and (max-width: 1200px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const Content = styled.div`
@@ -70,4 +81,29 @@ const Logo = styled.div`
   letter-spacing: 5px;
   text-align: justify;
   color: #ffffff;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  @media screen and (max-width: 578px) {
+    display: none;
+  }
+`;
+const LogoSmall = styled.div`
+  font-family: Oxygen;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 3px;
+  text-align: justify;
+  color: #ffffff;
+  display: none;
+
+  @media screen and (max-width: 578px) {
+    display: block;
+  }
 `;

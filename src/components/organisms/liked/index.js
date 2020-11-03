@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { 
-  Section, 
-  Wrapper, 
-  Container, 
-  Text
+import {
+  Section,
+  Wrapper,
+  Container,
+  Text,
+  PushContent
 } from "../../atoms";
 
 import ContactForm from "../../molecules/form";
@@ -13,7 +14,7 @@ import ContactForm from "../../molecules/form";
 import theme from "../../../styles/theme";
 
 export default function Liked(props) {
-  const { 
+  const {
     sectionName,
     title,
     text
@@ -23,29 +24,28 @@ export default function Liked(props) {
     <Section classes={sectionName} backgroundColor={theme.colors.white}>
       <Wrapper both xl>
         <Container lg>
-          <Block>
-            <Left />
-            <Right>
+          <PushContent>
+            <Text
+              classes="h3"
+              tag="h3"
+              text={title}
+              color={theme.colors.black}
+              bold
+              uppercase
+            />
+            <Wrapper top sm>
               <Text
-                classes="h3"
-                tag="h3"
-                text={title}
-                color={theme.colors.black}
+                classes="body2"
+                tag="p"
+                text={text}
+                color={theme.colors.darkGrey}
+                maxWidth="600px"
               />
-              <Wrapper top sm>
-                <Text
-                  classes="body2"
-                  tag="p"
-                  text={text}
-                  color={theme.colors.darkGrey}
-                  maxWidth="600px"
-                />
-              </Wrapper>
-              <Wrapper top lg>
-                <ContactForm />
-              </Wrapper>
-            </Right>
-          </Block>
+            </Wrapper>
+            <Wrapper top lg>
+              <ContactForm />
+            </Wrapper>
+          </PushContent>
         </Container>
       </Wrapper>
     </Section>

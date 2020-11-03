@@ -37,11 +37,11 @@ export default function Button(props) {
   }
 
   function renderButton() {
-    const { buttonTheme, type, text, href } = props;
+    const { buttonTheme, type, text, click } = props;
 
     if (type === "button") {
       return (
-        <Atom buttonTheme={buttonTheme}>
+        <Atom buttonTheme={buttonTheme} onClick={click} as="button">
           <Ink style={{ color: "white" }} />
           <Text>{text}</Text>
         </Atom>
@@ -50,6 +50,7 @@ export default function Button(props) {
     return null;
   }
   // PEDRO: Aqui bastava teres uma funçao. E os ifs la dentro
+  // ANDRÉ: Eu sei xD
 
   return (
     <>
@@ -65,11 +66,16 @@ const Text = styled.span`
   font-size: 16px;
   line-height: 1;
   letter-spacing: 1px;
+  font-weight: bold;
   transition: all 0.4s ease;
   text-transform: uppercase;
+
+  @media screen and (max-width: 578px) {
+    font-size: 14px;
+  }
 `;
 
-const Atom = styled.button`
+const Atom = styled.div`
   position: relative;
   padding: 16px 48px;
   transition: all 0.4s ease;
@@ -106,4 +112,25 @@ const Atom = styled.button`
       cursor: pointer;
     }
   `}
+
+  ${({ theme, buttonTheme }) => buttonTheme === "theme3" && css`
+    border: 1px solid black;
+
+    ${Text} {
+      color: ${theme.colors.black};
+    }
+
+    :hover {
+      ${Text} {
+        color: ${theme.colors.white};
+      }
+      background-color: ${theme.colors.black};
+      /* opacity: 0.8; */
+      cursor: pointer;
+    }
+  `}
+
+  @media screen and (max-width: 578px) {
+    padding: 16px 32px;
+  }
 `;

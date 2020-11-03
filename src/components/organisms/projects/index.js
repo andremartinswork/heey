@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
+import Fade from 'react-reveal/Fade';
 
 import {
   Parallax
@@ -36,9 +37,8 @@ export default function Projects(props) {
   }
 
   return (
-    <Section classes={sectionName} backgroundColor={theme.colors.white}>>
+    <Section classes={sectionName} backgroundColor={theme.colors.white}>
       <SwiperStyles />
-
       <Wrapper top lg>
         <Parallax className="custom-class" x={[20, 0]} tagOuter="div">
           <Text
@@ -54,17 +54,18 @@ export default function Projects(props) {
       <Wrapper both lg>
         <Container lg>
           <PushContent>
-            <Text
-              classes="body2"
-              tag="div"
-              text={text}
-              color={theme.colors.darkGrey}
-              maxWidth="500px"
-            />
+            <Fade>
+              <Text
+                classes="body2"
+                tag="div"
+                text={text}
+                color={theme.colors.darkGrey}
+                maxWidth="500px"
+              />
+            </Fade>
           </PushContent>
         </Container>
       </Wrapper>
-
       <WrapperSwiper>
         <Spacer />
         <Swiper {...params}>
@@ -122,13 +123,68 @@ const WrapperSwiper = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 1600px) {
+    .large {
+      height: 540px;
+    }
+    
+    .medium {
+      height: 540px;
+    }
+    
+    .small {
+      height: 540px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .large {
+      height: 500px;
+    }
+    
+    .medium {
+      height: 500px;
+    }
+    
+    .small {
+      height: 500px;
+    }
+  }
+
+  @media screen and (max-width: 1366px) {
+    .large {
+      height: 400px;
+    }
+    
+    .medium {
+      height: 400px;
+    }
+    
+    .small {
+      height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 578px) {
+    .large {
+      width: 700px!important;
+    }
+    
+    .medium {
+      width: 540px!important;
+    }
+    
+    .small {
+      width: 330px!important;
+    }
+  }
 `;
 /** TO DO*/
 const Spacer = styled.div`
   width: 100%;
   height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320)));
   display: flex;
- 
   align-items: center;
 `;
 const Flex = styled.div`
@@ -173,4 +229,17 @@ const Background = styled.div`
   right: 0;
   width: calc(1140px + ((100vw - 1140px) / 2));
   background: #F5F4FB;
+
+  @media screen and (max-width: 1410px) {
+    width: calc(960px + ((100vw - 960px) / 2));
+  }
+  @media screen and (max-width: 1200px) {
+    width: calc(100% - 90px);
+  }
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 45px);
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;

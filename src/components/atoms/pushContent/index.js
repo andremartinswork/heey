@@ -19,6 +19,17 @@ const Block = styled.div`
 `;
 const Left = styled.div`
   width: 268px;
+
+  @media screen and (max-width: 1410px) {
+    width: 200px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 150px;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 0
+  }
 `;
 const Right = styled.div`
   flex: 2;
