@@ -81,7 +81,7 @@ const Modal = styled(motion.div)`
   @media screen and (max-width: 578px) {
     left: 20px;
     right: 20px;
-    bottom: 80px;
+    bottom: 40px;
     width: auto;
   }
 `;
