@@ -48,7 +48,7 @@ export default function Intro(props) {
   return (
     <Margin>
       <Section classes={sectionName} zIndex={100} backgroundColor={theme.colors.white}>
-        <Fade right distance="100px">
+        <Fade bottom distance="100px">
           <Bar style={{ y }}>
             <Text
               classes="body1"

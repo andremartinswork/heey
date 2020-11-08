@@ -6,29 +6,24 @@ const content = {
   items: [
     {
       size: "large",
-      image: "/delete/image1.png",
-      alt: "Lols",
-    },
-    {
-      size: "small",
-      image: "/delete/image2.png",
-      alt: "Lols",
+      image: "/media/projects/voluntarios.jpg",
+      alt: "Voluntarios",
     },
     {
       size: "medium",
-      image: "/delete/image3.png",
-      alt: "Lols",
-    },
-    {
-      size: "small",
-      image: "/delete/image4.png",
-      alt: "Lols",
+      image: "/media/projects/babiitApp.jpg",
+      alt: "Babiit App",
     },
     {
       size: "large",
-      image: "/delete/image5.png",
-      alt: "Lols",
+      image: "/media/projects/babiitWeb.jpg",
+      alt: "Voluntários",
     },
+    {
+      size: "small",
+      image: "/media/projects/bevolun.jpg",
+      alt: "Bevolun",
+    }
   ],
   dragText: "Drag to explore",
 };

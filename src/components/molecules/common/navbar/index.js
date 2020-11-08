@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
+import * as Scroll from 'react-scroll';
+var scroll = Scroll.animateScroll;
+
+import {
+  useRouter
+} from 'next/router';
 
 import {
   motion,
@@ -18,29 +25,59 @@ export default function Navbar(props) {
   } = props;
 
   const { scrollYProgress } = useViewportScroll();
+  const { route } = useRouter();
+  console.log('route', route);
 
   const background = useTransform(scrollYProgress, [0.1, 0.150], ['rgba(21,0,255,0)', 'rgba(21,0,255,1)']);
   const height = useTransform(scrollYProgress, [0.1, 0.150], ['100px', '80px']);
   const borderColor = useTransform(scrollYProgress, [0.1, 0.150], ['rgba(0,0,0,0)', 'rgba(0,0,0,1)']);
 
+  function goTop() {
+    scroll.scrollToTop();
+  }
+
   return (
     <Header style={{ background, height, borderColor }}>
       <Content>
         <Left>
-          <Fade top>
-            <Logo>
-              HEEY.CREATIVE
-            </Logo>
-            <LogoSmall>
-              HEEY
-            </LogoSmall>
-          </Fade>
+          {
+            route === "/legal-information" ? (
+              <Link href="/">
+                <a>
+                  <Fade top>
+                    <Logo>
+                      HEEY.DIGITAL
+                    </Logo>
+                    <LogoSmall>
+                      HEEY
+                    </LogoSmall>
+                  </Fade>
+                </a>
+              </Link>
+            )
+            : (
+              <div onClick={goTop}>
+                <Fade top>
+                  <Logo>
+                    HEEY.DIGITAL
+                  </Logo>
+                  <LogoSmall>
+                    HEEY
+                  </LogoSmall>
+                </Fade>
+              </div>
+            )
+          }
         </Left>
-        <Right>
-          <Fade top>
-            <Button {...button} />
-          </Fade>
-        </Right>
+        {
+          route === "/" && (
+            <Right>
+              <Fade top>
+                <Button {...button} />
+              </Fade>
+            </Right>
+          )
+        }
       </Content>
     </Header>
   )

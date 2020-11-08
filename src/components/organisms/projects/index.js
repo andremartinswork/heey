@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import Fade from 'react-reveal/Fade';
+import Image from 'next/image';
 
 import {
   Parallax
@@ -72,7 +73,12 @@ export default function Projects(props) {
           {
             items.map((item, index) => (
               <div className={`item ${item.size}`} key={String(index)}>
-                <img src={item.image} alt={item.alt} />
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  layout="fill"
+                  loading="eager"
+                />
               </div>
             ))
           }

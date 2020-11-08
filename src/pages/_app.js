@@ -3,8 +3,7 @@ import Head from 'next/head';
 
 import { ThemeProvider } from 'styled-components';
 
-
-import { TweenLite } from 'gsap'
+import { AnimatePresence } from 'framer-motion'
 
 import Layout from '../components/layout';
 
@@ -15,27 +14,27 @@ import '../styles/global.css';
 // THEME
 import theme from '../styles/theme';
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    // const myElement = document.getElementsByTagName("html")[0]
-    // TweenLite.to(myElement, 1, {width: 100, backgroundColor: "red"});
 
-    // TweenLite.set(myElement, {
-    //   y: -window.pageYOffset
-    // });
-  }, [])
+
+import Scrollbar from 'smooth-scrollbar';
+import { TweenMax, Power1 } from 'gsap';
+
+function MyApp({ Component, pageProps, router }) {
+  // useEffect(() => {
+  //   Scrollbar.init(document.querySelector('body'));
+  // }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
-        </Head>
+    <>
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
+      </Head>
+      <ThemeProvider theme={theme}>
         <Layout>
-          <Component {...pageProps} />
+          <Component {...pageProps} key={router.route} />
         </Layout>
-      </>
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
   )
 }
 
