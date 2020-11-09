@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import { ThemeProvider } from 'styled-components';
-
-import { AnimatePresence } from 'framer-motion'
 
 import Layout from '../components/layout';
 
@@ -14,16 +12,7 @@ import '../styles/global.css';
 // THEME
 import theme from '../styles/theme';
 
-
-
-import Scrollbar from 'smooth-scrollbar';
-import { TweenMax, Power1 } from 'gsap';
-
 function MyApp({ Component, pageProps, router }) {
-  // useEffect(() => {
-  //   Scrollbar.init(document.querySelector('body'));
-  // }, [])
-
   return (
     <>
       <Head>
