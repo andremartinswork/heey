@@ -16,6 +16,36 @@ import {
 
 import theme from '../../../styles/theme';
 
+const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+
+const containerVariants = {
+  before: {},
+  after: { 
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      staggerDirection: -1,
+    }
+  },
+}
+
+const letterVariants = {
+  before: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      ...transition
+    },
+  },
+  after: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ...transition
+    },
+  },
+}
+
 export default function Banner(props) {
   const {
     sectionName,
@@ -28,8 +58,19 @@ export default function Banner(props) {
 
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
+  const string = Array.from(title);
+
   return (
-    <Fixed>
+    <Fixed 
+      // onAnimationComplete={() => console.log('Can Scroll')}
+      // initial={{
+      //   opacity: 0,
+      // }}
+      // animate={{
+      //   opacity: 1,
+      //   transition
+      // }}
+    >
       <Section classes={sectionName} backgroundColor={theme.colors.primary}>
         <Lines style={{ opacity }}>
           <Line />
@@ -49,15 +90,19 @@ export default function Banner(props) {
         </Lines>
         <Container lg>
           <Content>
-            <motion.div style={{ y }}>
-              <Fade bottom distante="40px">
-                <Text
-                  classes="h1"
-                  tag="h1"
-                  text={title}
-                  color={theme.colors.white}
-                />
-              </Fade>
+            <motion.div className="wrapper" style={{ y }}>
+              <motion.h1 
+                className='h1'
+                variants={containerVariants}
+                initial={"before"}
+                animate={"after"}
+              >
+                {string.map((letter, index) => (
+                  <motion.span key={index} variants={letterVariants}>
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.h1>
             </motion.div>
           </Content>
         </Container>
@@ -66,7 +111,7 @@ export default function Banner(props) {
   )
 }
 
-const Fixed = styled.div`
+const Fixed = styled(motion.div)`
   position: fixed;
   left: 0;
   right: 0;
@@ -104,6 +149,20 @@ const Content = styled.div`
   }
   @media screen and (max-width: 578px) {
     transform: translateX(-10px);
+  }
+
+  .wrapper {
+    overflow: hidden;
+
+    .h1 {
+      color: ${({ theme }) => theme.colors.white};
+      display: flex;
+      position: relative;
+
+      span {
+        position: relative;
+      }
+    }
   }
 `;
 const Lines = styled(motion.div)`

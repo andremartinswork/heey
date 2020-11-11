@@ -18,7 +18,10 @@ import {
 } from '../../atoms';
 
 import theme from '../../../styles/theme';
+
 import { checkCookie, setCookie } from '../../../utils/cookies';
+
+const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
 export default function Intro(props) {
   const {
@@ -48,18 +51,30 @@ export default function Intro(props) {
   return (
     <Margin>
       <Section classes={sectionName} zIndex={100} backgroundColor={theme.colors.white}>
-        <Fade bottom distance="100px">
-          <Bar style={{ y }}>
-            <Text
-              classes="body1"
-              tag="p"
-              text={visited ? text2Question : text1Question}
-              color={theme.colors.black}
-              bold
-              uppercase
-            />
-          </Bar>
-        </Fade>
+        <Bar
+          style={{ y }}
+          initial={{
+            opacity: 0,
+            x: '100%',
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              delay: 0.8,
+              ...transition
+            }
+          }}
+        >
+          <Text
+            classes="body1"
+            tag="p"
+            text={visited ? text2Question : text1Question}
+            color={theme.colors.black}
+            bold
+            uppercase
+          />
+        </Bar>
         <Wrapper top xs />
         <Wrapper top xl>
           <Container lg>

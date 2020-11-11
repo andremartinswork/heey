@@ -19,6 +19,8 @@ import {
   Button
 } from '../../../atoms';
 
+const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+
 export default function Navbar(props) {
   const {
     button
@@ -26,7 +28,6 @@ export default function Navbar(props) {
 
   const { scrollYProgress } = useViewportScroll();
   const { route } = useRouter();
-  console.log('route', route);
 
   const background = useTransform(scrollYProgress, [0.1, 0.150], ['rgba(21,0,255,0)', 'rgba(21,0,255,1)']);
   const height = useTransform(scrollYProgress, [0.1, 0.150], ['100px', '80px']);
@@ -37,34 +38,42 @@ export default function Navbar(props) {
   }
 
   return (
-    <Header style={{ background, height, borderColor }}>
+    <Header
+      style={{ background, height, borderColor }}
+      initial={{
+        y: '-100%'
+      }}
+      animate={{
+        y: 0,
+        transition: {
+          delay: 0.8,
+          ...transition
+        }
+      }}
+    >
       <Content>
         <Left>
           {
             route === "/legal-information" ? (
               <Link href="/">
                 <a>
-                  <Fade top>
-                    <Logo>
-                      HEEY.DIGITAL
-                    </Logo>
-                    <LogoSmall>
-                      HEEY
-                    </LogoSmall>
-                  </Fade>
-                </a>
-              </Link>
-            )
-            : (
-              <div onClick={goTop}>
-                <Fade top>
                   <Logo>
                     HEEY.DIGITAL
                   </Logo>
                   <LogoSmall>
                     HEEY
-                  </LogoSmall>
-                </Fade>
+                  </LogoSmall>      
+                </a>
+              </Link>
+            )
+            : (
+              <div onClick={goTop}>
+                <Logo>
+                  HEEY.DIGITAL
+                </Logo>
+                <LogoSmall>
+                  HEEY
+                </LogoSmall>          
               </div>
             )
           }
@@ -72,9 +81,7 @@ export default function Navbar(props) {
         {
           route === "/" && (
             <Right>
-              <Fade top>
-                <Button {...button} />
-              </Fade>
+              <Button {...button} />
             </Right>
           )
         }
